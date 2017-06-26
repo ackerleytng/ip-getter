@@ -35,7 +35,7 @@ func GetIpv4(w http.ResponseWriter, r *http.Request) {
 
 	var responses []Ipv4Response
 
-	ipToMac := GetLeases("dhcpd.leases.sample")
+	ipToMac := GetLeases(LeasesFilePath)
 	for _, request := range requests {
 		responses = append(responses,
 			Ipv4Response{
